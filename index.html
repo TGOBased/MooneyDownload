@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download Moony_v34000.rbxmx</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    button {
+      background-color: #00aaff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Download Moony v34000</h1>
+  <p>This file is hosted from the GitHub repository.</p>
+  <button onclick="handleDownload()">Download File</button>
+
+  <script>
+    const FILE_URL = "https://raw.githubusercontent.com/TGOBased/MooneyDownload/main/moony_v34000.rbxmx";
+    const FILE_HASH = "PUT_SHA256_HASH_HERE"; // Replace with real hash
+
+    function handleDownload() {
+      const confirmScan = confirm("Do you want to scan this file on VirusTotal before downloading?");
+      if (confirmScan) {
+        const vtURL = `https://www.virustotal.com`;
+        window.open(vtURL, "_blank");
+      }
+
+      // Trigger download
+      const link = document.createElement("a");
+      link.href = FILE_URL;
+      link.download = "moony_v34000.rbxmx";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
